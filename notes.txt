@@ -1,0 +1,3 @@
+Page loads with teams and key, default page is nfl colours, all items are false so dont show
+you can select team on drop down (this is persisted in a cookie and then loads once revisited)
+once selected it does api call to get team data, news, stadium & roster
