@@ -3,3 +3,37 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.heading {
+  padding: 1rem;
+}
+
+.selector-container {
+  border: 0.1rem dashed yellow;
+  padding: 1rem;
+}
+
+.stadium-container {
+  border: 0.1rem dashed green;
+  padding: 1rem;
+}
+
+.staff-container {
+  border: 0.1rem dashed indianred;
+  padding: 1rem;
+}
+
+.fixtures-container {
+  border: 0.1rem dashed palegoldenrod;
+  padding: 1rem;
+}
+
+.roster-container {
+  border: 0.1rem dashed rebeccapurple;
+  padding: 1rem;
+}
+
+.news-container {
+  border: 0.1rem dashed seagreen;
+  padding: 1rem;
+}

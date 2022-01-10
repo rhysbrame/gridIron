@@ -1,23 +1,26 @@
 import React from 'react';
 
 const TeamSelector = (props) => {
-  const { teams } = props;
+  const { teams, onChange } = props;
+
   return (
     <>
-      <label htmlFor="team-select">Choose a team:</label>
-      <select name="teams" id="team-select">
-        <option value="choose" key="O">
-          Choose a Team
-        </option>
-        {teams.map((team) => {
-          const { Key, Name } = team;
-          return (
-            <option value={Key} key={Key}>
-              {Name}
-            </option>
-          );
-        })}
-      </select>
+      <div className="selector-container">
+        <label htmlFor="team-select">Choose a Team: </label>
+        <br></br>
+        <select name="teams" id="team-select" onChange={onChange}>
+          <option>Select a Team...</option>
+          {teams.map((team) => {
+            const { Key, Name, City } = team;
+            return (
+              <option value={Key} key={Key}>
+                {City} {Name}
+              </option>
+            );
+          })}
+        </select>
+        <br></br>
+      </div>
     </>
   );
 };
