@@ -5,7 +5,7 @@ const News = (props) => {
   const { teamID } = props;
 
   //replace fetch local with this url
-  const url = `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=a79947c2b7ac4db7849431550720651c`;
+  const NEWS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamID &&

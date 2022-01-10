@@ -2,11 +2,26 @@ import React, { useEffect, useState } from 'react';
 
 const Schedule = (props) => {
   const [teamGames, setTeamGames] = useState(null);
+  const [currentYear, setCurrentYear] = useState(null);
   const { teamKey } = props;
 
-  //replace fetch local with this url and make a current year fetch
-  const currentYear = '2021';
-  const url = `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=a79947c2b7ac4db7849431550720651c`;
+  const current_season_url = `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=${process.env.SPORTSDATA_API_KEY}`;
+
+  //'CurrentSeason.json'
+
+  useEffect(() => {
+    fetch('CurrentSeason.json')
+      .then((res) => {
+        return res.json();
+      })
+      .then((data) => {
+        setCurrentYear(data);
+      });
+  });
+
+  const schedule_url = `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=${process.env.SPORTSDATA_API_KEY}`;
+
+  //'Fixtures.json'
 
   useEffect(() => {
     teamKey &&

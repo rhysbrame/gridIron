@@ -5,6 +5,7 @@ import Staff from '../components/Staff';
 import Schedule from '../components/Schedule';
 import News from '../components/News';
 import Roster from '../components/Roster';
+
 // Change this Teams object to a call ot the 3rd party API for up to date information.
 import Teams from '../public/Teams.json';
 

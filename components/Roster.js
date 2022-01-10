@@ -5,8 +5,7 @@ const Roster = (props) => {
   const { teamID } = props;
 
   //replace fetch local with this url
-  const APIKey = 'a79947c2b7ac4db7849431550720651c';
-  const url = `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=${APIKey}`;
+  const url = `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamID &&
