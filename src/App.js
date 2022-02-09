@@ -5,6 +5,7 @@ import Staff from '../components/Staff';
 import Schedule from '../components/Schedule';
 import News from '../components/News';
 import Roster from '../components/Roster';
+import Header from '../components/Header';
 
 // Change this Teams object to a call ot the 3rd party API for up to date information.
 import Teams from '../public/Teams.json';
@@ -34,6 +35,7 @@ const App = () => {
 
   return (
     <div
+      className="container"
       style={{
         backgroundColor: teamColor,
         color: teamSecondaryColor,
@@ -42,11 +44,7 @@ const App = () => {
         borderWidth: '3px',
       }}
     >
-      <h1 className="heading">#gridIron</h1>
-      <h2>{chosenTeam.Name}</h2>
-      <img src={chosenTeam.WikipediaLogoUrl} alt="logo" />
-      <img src={chosenTeam.WikipediaWordMarkUrl} alt="wordmark" />
-
+      <Header data={chosenTeam} />
       <TeamSelector teams={Teams} onChange={handleSelectTeam} />
       <Stadium stadium={chosenTeam.StadiumDetails} />
       <Staff team={chosenTeam} />

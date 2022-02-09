@@ -4,36 +4,42 @@
   box-sizing: border-box;
 }
 
+html {
+  padding: 50px;
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 .heading {
   padding: 1rem;
 }
 
 .selector-container {
-  border: 0.1rem dashed yellow;
+  border: 0.3rem solid yellow;
   padding: 1rem;
 }
 
 .stadium-container {
-  border: 0.1rem dashed green;
+  border: 0.3rem solid green;
   padding: 1rem;
 }
 
 .staff-container {
-  border: 0.1rem dashed indianred;
+  border: 0.3rem solid indianred;
   padding: 1rem;
 }
 
 .fixtures-container {
-  border: 0.1rem dashed palegoldenrod;
+  border: 0.3rem solid palegoldenrod;
   padding: 1rem;
 }
 
 .roster-container {
-  border: 0.1rem dashed rebeccapurple;
+  border: 0.3rem solid rebeccapurple;
   padding: 1rem;
 }
 
 .news-container {
-  border: 0.1rem dashed seagreen;
+  border: 0.3rem solid seagreen;
   padding: 1rem;
 }
