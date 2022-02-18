@@ -35,24 +35,26 @@ const App = () => {
   const teamTertiaryColor = '#' + chosenTeam.TertiaryColor;
 
   return (
-    <div
-      className="container"
-      style={{
-        backgroundColor: teamColor,
-        color: teamSecondaryColor,
-        borderColor: teamTertiaryColor,
-        borderStyle: 'solid',
-        borderWidth: '3px',
-      }}
-    >
-      <Header data={chosenTeam} />
-      <TeamSelector teams={Teams} onChange={handleSelectTeam} />
-      <Stadium stadium={chosenTeam.StadiumDetails} />
-      <Staff team={chosenTeam} />
-      <Schedule teamKey={chosenTeam.GlobalTeamID} />
-      <News teamID={chosenTeam.Key} />
-      <Roster teamID={chosenTeam.Key} />
-      <Footer />
+    <div className="background-container">
+      <div
+        className="container"
+        style={{
+          backgroundColor: teamColor,
+          color: teamSecondaryColor,
+          borderColor: teamTertiaryColor,
+          borderStyle: 'solid',
+          borderWidth: '3px',
+        }}
+      >
+        <Header data={chosenTeam} />
+        <TeamSelector teams={Teams} onChange={handleSelectTeam} />
+        <Schedule teamKey={chosenTeam.GlobalTeamID} />
+        <Stadium stadium={chosenTeam.StadiumDetails} />
+        <Staff team={chosenTeam} />
+        <News teamID={chosenTeam.Key} />
+        <Roster teamID={chosenTeam.Key} />
+        <Footer />
+      </div>
     </div>
   );
 };

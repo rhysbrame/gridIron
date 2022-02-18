@@ -43,7 +43,7 @@ const Schedule = (props) => {
 
   return (
     <>
-      <div className="fixtures-container">
+      <div className="schedule-container">
         <h1>Schedule</h1>
         <ul>
           {teamGames &&

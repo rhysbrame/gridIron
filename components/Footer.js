@@ -10,6 +10,7 @@ const Footer = () => {
             <a href="https://github.com/rhysbrame" className="footer__link">
               Rhys Brame
             </a>
+            &nbsp;&copy; 2022
           </p>
         </div>
       </div>
