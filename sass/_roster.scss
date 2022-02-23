@@ -1,0 +1,17 @@
+.roster-container {
+  // developer helper
+  border: 0.3rem solid rebeccapurple;
+
+  // proper
+  grid-column: col-start 2 / col-end 3;
+}
+
+.roster-grid {
+  display: grid;
+
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+}
+
+.roster-player {
+}

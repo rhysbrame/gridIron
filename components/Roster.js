@@ -19,13 +19,13 @@ const Roster = (props) => {
   return (
     <>
       <div className="roster-container">
-        <h1>Roster</h1>
-        <ul>
+        <h1 className="heading-1">Roster</h1>
+        <ul className="roster-grid">
           {roster &&
             roster.map((player) => {
               return (
-                <li key={player.PlayerID}>
-                  <h5>
+                <li className="roster-player" key={player.PlayerID}>
+                  <h5 className="heading-5">
                     {player.FirstName}&nbsp;{player.LastName}
                   </h5>
                 </li>

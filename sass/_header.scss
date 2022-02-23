@@ -1,0 +1,10 @@
+.header {
+  border: 0.3rem solid red;
+
+  grid-row: 1 / 2;
+  grid-column: col-start 1 / col-end 3;
+}
+
+.heading {
+  padding: 0rem;
+}
