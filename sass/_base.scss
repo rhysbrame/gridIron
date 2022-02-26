@@ -17,6 +17,26 @@ $font-primary: Arial, Helvetica, sans-serif;
 html {
   box-sizing: border-box;
   font-size: 62.5%; // 10px/16px = 62.5% -> 1rem = 10px;
+
+  // It will be applied to BIG-DESKTOPS
+  @media only screen and (min-width: 1800px) {
+    font-size: 75%; // 1rem = 12px; 12px/16px = 75%
+  }
+
+  // It will be applied to TABLET-LANDSCAPE
+  @media only screen and (max-width: 1200px) {
+    font-size: 56.25%; // 1rem = 9px; 9px/16px = 56.25%
+  }
+
+  // It will be applied to TABLET-PORTRAIT
+  @media only screen and (max-width: 900px) {
+    font-size: 50%; // 1rem = 8px; 8px/16px = 50%
+  }
+
+  // It will be applied to PHONE
+  @media only screen and (max-width: 600px) {
+    font-size: 37.5%; // 1rem = 6px; 6px/16px = 37.5%
+  }
 }
 
 body {

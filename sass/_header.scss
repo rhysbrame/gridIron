@@ -1,10 +1,52 @@
 .header {
+  // Dev helper
   border: 0.3rem solid red;
-
+  // Real
   grid-row: 1 / 2;
   grid-column: col-start 1 / col-end 3;
-}
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 1fr);
 
-.heading {
-  padding: 0rem;
+  h1 {
+    grid-row: 1 / 1;
+    grid-column: 2 / 4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__logo-container {
+    border: 0.3rem solid salmon;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    display: flex;
+    align-items: center;
+  }
+
+  &__logo-img {
+    border: 0.3rem solid greenyellow;
+
+    max-height: 100%;
+    max-width: 100%;
+    margin: auto;
+    padding: 0.3rem;
+  }
+
+  &__wordmark-container {
+    border: 0.3rem solid white;
+
+    grid-row: 2 / 4;
+    grid-column: 3 / 11;
+    display: flex;
+    align-items: center;
+  }
+
+  &__wordmark-img {
+    border: 0.3rem solid darkcyan;
+
+    padding: 0.3rem;
+    width: 100%;
+    max-height: 100%;
+  }
 }
