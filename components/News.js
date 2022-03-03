@@ -19,14 +19,16 @@ const News = (props) => {
   return (
     <>
       <div className="news-container">
-        <h1>News</h1>
+        <h2 className="heading-2 mb-sm">News</h2>
         <ul>
           {news &&
             news.map((article) => {
               return (
                 <li key={article.NewsID}>
-                  <h3>{article.Title}</h3>
-                  <h5>{article.Content}</h5>
+                  <article className="news-article">
+                    <h4 className="heading-4">{article.Title}</h4>
+                    <p>{article.Content}</p>
+                  </article>
                 </li>
               );
             })}

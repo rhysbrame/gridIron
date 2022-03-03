@@ -10,22 +10,22 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
 }
-@media only screen and (min-width: 1800px) {
+@media only screen and (min-width: 112.5em) {
   html {
     font-size: 75%;
   }
 }
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 75em) {
   html {
     font-size: 56.25%;
   }
 }
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 56.25em) {
   html {
     font-size: 50%;
   }
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 37.5em) {
   html {
     font-size: 37.5%;
   }
@@ -33,23 +33,36 @@ html {
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  color: #00008b;
-  font-weight: 300;
+  color: #000000;
+  font-weight: 400;
   line-height: 1.6;
 }
 
 .background-container {
-  background-color: white;
+  background-color: var(--team-tertiary-color);
 }
 
 .container {
   width: 90%;
   margin: 0 auto;
+  padding: 5rem;
+  background-color: var(--team-primary-color);
   display: grid;
-  grid-template-rows: repeat(3, 25vh) 75vh min-content;
   grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
-  grid-gap: 1.5rem;
-  justify-content: center;
+  grid-template-rows: repeat(3, 25vh) 75vh min-content;
+  grid-gap: 3rem;
+}
+@media only screen and (max-width: 56.25em) {
+  .container {
+    width: 100%;
+    padding: 3rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .container {
+    width: 100%;
+    padding: 3rem 0;
+  }
 }
 
 .heading-5, .heading-4, .heading-3, .heading-2, .heading-1 {
@@ -58,7 +71,7 @@ body {
 }
 
 .heading-1 {
-  font-size: 3.6rem;
+  font-size: 3.2rem;
 }
 
 .heading-2 {
@@ -71,10 +84,11 @@ body {
 
 .heading-4 {
   font-size: 2.3rem;
+  font-weight: 600;
 }
 
 .heading-5 {
-  font-size: 1.9rem;
+  font-size: 1.8rem;
 }
 
 .mb-sm {
@@ -93,63 +107,68 @@ body {
   margin-bottom: 8rem;
 }
 
-.footer {
-  border: 0.3rem solid violet;
-  grid-column: col-start 1/col-end 3;
-}
-
-.header {
-  border: 0.3rem solid red;
-  grid-row: 1/2;
-  grid-column: col-start 1/col-end 3;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
-}
-.header h1 {
-  grid-row: 1/1;
-  grid-column: 2/4;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.header__logo-container {
-  border: 0.3rem solid salmon;
-  grid-row: 1/2;
-  grid-column: 1/2;
-  display: flex;
-  align-items: center;
-}
-.header__logo-img {
-  border: 0.3rem solid greenyellow;
-  max-height: 100%;
-  max-width: 100%;
-  margin: auto;
-  padding: 0.3rem;
-}
-.header__wordmark-container {
-  border: 0.3rem solid white;
-  grid-row: 2/4;
-  grid-column: 3/11;
-  display: flex;
-  align-items: center;
-}
-.header__wordmark-img {
-  border: 0.3rem solid darkcyan;
-  padding: 0.3rem;
-  width: 100%;
-  max-height: 100%;
-}
-
 .news-container {
-  border: 0.3rem solid seagreen;
+  background-color: #ffffff;
+  padding: 1rem;
   grid-row: 2/3;
   grid-column: col-start 1/col-end 3;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .news-container {
+    border-radius: 0;
+  }
+}
+.news-container li {
+  list-style: none;
+}
+
+.schedule-container {
+  background-color: #ffffff;
+  grid-row: span 2;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .schedule-container {
+    border-radius: 0;
+  }
+}
+.schedule-container li {
+  list-style: none;
+}
+
+.stadium-container {
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .stadium-container {
+    border-radius: 0;
+  }
+}
+
+.staff-container {
+  background-color: #ffffff;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .staff-container {
+    border-radius: 0;
+  }
 }
 
 .roster-container {
-  border: 0.3rem solid rebeccapurple;
+  background-color: #ffffff;
   grid-column: col-start 2/col-end 3;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .roster-container {
+    border-radius: 0;
+  }
+}
+.roster-container li {
+  list-style: none;
 }
 
 .roster-grid {
@@ -157,24 +176,61 @@ body {
   grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
 }
 
-.schedule-container {
-  border: 0.3rem solid palegoldenrod;
-  grid-row: span 2;
+.header {
+  background-color: #ffffff;
+  grid-row: 1/2;
+  grid-column: col-start 1/col-end 3;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  border-radius: 1rem;
 }
-
-.stadium-container {
-  border: 0.3rem solid blue;
+@media only screen and (max-width: 37.5em) {
+  .header {
+    border-radius: 0;
+  }
 }
-
-.staff-container {
-  border: 0.3rem solid indianred;
+.header__logo-container {
+  grid-row: 1/2;
+  grid-column: 1/2;
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  display: flex;
+}
+.header__logo-img {
+  align-items: end;
+  max-height: 100%;
+  max-width: 100%;
+  margin: auto;
+  padding: 1rem;
+}
+.header__wordmark-container {
+  grid-row: 2/4;
+  grid-column: 3/11;
+  display: flex;
+  align-items: center;
+}
+.header__wordmark-img {
+  padding: 0.3rem;
+  width: 100%;
+  max-height: 100%;
 }
 
 .selector-container {
-  border: 0.3rem solid yellow;
   grid-row: 1/2;
   grid-column: col-start 3/col-end 3;
-  justify-self: end;
+}
+
+.footer {
+  background-color: #000000;
+  grid-column: col-start 1/col-end 3;
+  border-radius: 1rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .footer {
+    border-radius: 0;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

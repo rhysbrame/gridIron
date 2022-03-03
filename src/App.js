@@ -30,22 +30,23 @@ const App = () => {
     setChosenTeam(selectedTeam);
   };
 
-  const teamColor = '#' + chosenTeam.PrimaryColor + '80';
+  const teamColor = '#' + chosenTeam.PrimaryColor;
   const teamSecondaryColor = '#' + chosenTeam.SecondaryColor;
   const teamTertiaryColor = '#' + chosenTeam.TertiaryColor;
 
+  document.documentElement.style.setProperty('--team-primary-color', teamColor);
+  document.documentElement.style.setProperty(
+    '--team-secondary-color',
+    teamSecondaryColor
+  );
+  document.documentElement.style.setProperty(
+    '--team-tertiary-color',
+    teamTertiaryColor
+  );
+
   return (
     <div className="background-container">
-      <div
-        className="container"
-        style={{
-          backgroundColor: teamColor,
-          color: teamSecondaryColor,
-          borderColor: teamTertiaryColor,
-          borderStyle: 'solid',
-          borderWidth: '3px',
-        }}
-      >
+      <div className="container">
         <Header data={chosenTeam} />
         <TeamSelector teams={Teams} onChange={handleSelectTeam} />
         <Schedule teamKey={chosenTeam.GlobalTeamID} />

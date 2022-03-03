@@ -6,7 +6,6 @@ const TeamSelector = (props) => {
   return (
     <>
       <div className="selector-container">
-        <label htmlFor="team-select">Choose a Team: </label>
         <br></br>
         <select name="teams" id="team-select" onChange={onChange}>
           <option>Select a Team...</option>
