@@ -1,9 +1,19 @@
 .roster-container {
   // developer helper
-  border: 0.3rem solid rebeccapurple;
+  // border: 0.3rem solid rebeccapurple;
 
   // proper
+  background-color: $color-white;
   grid-column: col-start 2 / col-end 3;
+
+  border-radius: map.get($border-radius, 'curved');
+  @include respond(phone) {
+    border-radius: map.get($border-radius, 'none');
+  }
+
+  li {
+    list-style: none;
+  }
 }
 
 .roster-grid {

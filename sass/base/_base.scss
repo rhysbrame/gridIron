@@ -1,0 +1,60 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  // This defines a 1rem. Its a global setting
+  font-size: 62.5%; // 1rem = 10px; 10px / 16px = 62.5%
+
+  @include respond(big-desk) {
+    font-size: 75%; // 1rem = 12px, 12/16 = 75%
+  }
+  @include respond(tab-land) {
+    font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25%
+  }
+  @include respond(tab-port) {
+    font-size: 50%; // 1rem = 8px, 8/16 = 50%
+  }
+  @include respond(phone) {
+    font-size: 37.5%; // 1rem = 6px; 6px/16px = 37.5%
+  }
+}
+
+body {
+  font-family: $font-primary;
+  color: $color-primary;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+// Custom
+.background-container {
+  background-color: var(--team-tertiary-color);
+}
+
+.container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 5rem;
+  background-color: var(--team-primary-color);
+
+  display: grid;
+  grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
+  grid-template-rows: repeat(3, 25vh) 75vh min-content;
+  grid-gap: 3rem;
+
+  @include respond(tab-port) {
+    width: 100%;
+    padding: 3rem;
+  }
+  @include respond(phone) {
+    width: 100%;
+    padding: 3rem 0;
+  }
+}

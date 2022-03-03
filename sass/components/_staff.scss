@@ -1,0 +1,10 @@
+.staff-container {
+  // border: 0.3rem solid indianred;
+
+  background-color: $color-white;
+
+  border-radius: map.get($border-radius, 'curved');
+  @include respond(phone) {
+    border-radius: map.get($border-radius, 'none');
+  }
+}

@@ -1,11 +1,18 @@
-@import 'base';
-@import 'typography';
+@use 'sass:map';
 
-@import 'footer';
-@import 'header';
-@import 'news';
-@import 'roster';
-@import 'schedule';
-@import 'stadium';
-@import 'staff';
-@import 'team-selector';
+@import 'abstracts/mixins';
+@import 'abstracts/variables';
+
+@import 'base/base';
+@import 'base/typography';
+@import 'base/utilities';
+
+@import 'components/news';
+@import 'components/schedule';
+@import 'components/stadium';
+@import 'components/staff';
+@import 'components/roster';
+
+@import 'layout/header';
+@import 'layout/team-selector';
+@import 'layout/footer';
