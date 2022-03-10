@@ -34,7 +34,6 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #000000;
-  font-weight: 400;
   line-height: 1.6;
 }
 
@@ -67,28 +66,28 @@ body {
 
 .heading-5, .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .heading-1 {
-  font-size: 3.2rem;
-}
-
-.heading-2 {
   font-size: 4rem;
 }
 
+.heading-2 {
+  font-size: 3.4rem;
+}
+
 .heading-3 {
-  font-size: 3rem;
+  font-size: 2.6rem;
 }
 
 .heading-4 {
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 600;
 }
 
 .heading-5 {
-  font-size: 1.8rem;
+  font-size: 1.6rem;
 }
 
 .mb-sm {
@@ -109,7 +108,8 @@ body {
 
 .news-container {
   background-color: #ffffff;
-  padding: 1rem;
+  padding: 1.5rem;
+  overflow-y: scroll;
   grid-row: 2/3;
   grid-column: col-start 1/col-end 3;
   border-radius: 1rem;
@@ -119,12 +119,15 @@ body {
     border-radius: 0;
   }
 }
-.news-container li {
+
+.news-article {
   list-style: none;
+  font-size: 16px;
 }
 
 .schedule-container {
   background-color: #ffffff;
+  padding: 1.5rem;
   grid-row: span 2;
   border-radius: 1rem;
 }
@@ -138,6 +141,7 @@ body {
 }
 
 .stadium-container {
+  padding: 1.5rem;
   background-color: #ffffff;
   border-radius: 1rem;
 }
@@ -148,6 +152,7 @@ body {
 }
 
 .staff-container {
+  padding: 1.5rem;
   background-color: #ffffff;
   border-radius: 1rem;
 }
@@ -158,6 +163,7 @@ body {
 }
 
 .roster-container {
+  padding: 1.5rem;
   background-color: #ffffff;
   grid-column: col-start 2/col-end 3;
   border-radius: 1rem;

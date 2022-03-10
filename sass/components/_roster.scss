@@ -1,8 +1,5 @@
 .roster-container {
-  // developer helper
-  // border: 0.3rem solid rebeccapurple;
-
-  // proper
+  padding: $default-container-padding;
   background-color: $color-white;
   grid-column: col-start 2 / col-end 3;
 

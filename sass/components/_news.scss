@@ -1,9 +1,9 @@
 .news-container {
-  // border: 0.3rem solid seagreen;
-
   background-color: $color-white;
-  // color: var(--team-primary-color);
-  padding: 1rem;
+  padding: $default-container-padding;
+  // overflow: hidden;
+  overflow-y: scroll;
+
   grid-row: 2 / 3;
   grid-column: col-start 1 / col-end 3;
 
@@ -11,11 +11,13 @@
   @include respond(phone) {
     border-radius: map.get($border-radius, 'none');
   }
+}
 
-  li {
-    list-style: none;
-  }
+.news-container_scroll {
+  // height: 100%;
 }
 
 .news-article {
+  list-style: none;
+  font-size: 16px;
 }

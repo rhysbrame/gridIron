@@ -44,15 +44,15 @@ const Schedule = (props) => {
   return (
     <>
       <div className="schedule-container">
-        <h1>Schedule</h1>
+        <h1 className="heading-1">Schedule</h1>
         <ul>
           {teamGames &&
             teamGames.map((game) => {
               return (
                 <li key={game.GameKey}>
-                  <h5>{game.AwayTeam}</h5>
-                  <h5>{game.DateTime}</h5>
-                  <h5>{game.Channel}</h5>
+                  <h5 className="heading-5">{game.AwayTeam}</h5>
+                  <h5 className="heading-5">{game.DateTime}</h5>
+                  <h5 className="heading-5">{game.Channel}</h5>
                 </li>
               );
             })}

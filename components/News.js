@@ -19,20 +19,22 @@ const News = (props) => {
   return (
     <>
       <div className="news-container">
-        <h2 className="heading-2 mb-sm">News</h2>
-        <ul>
-          {news &&
-            news.map((article) => {
-              return (
-                <li key={article.NewsID}>
-                  <article className="news-article">
-                    <h4 className="heading-4">{article.Title}</h4>
-                    <p>{article.Content}</p>
-                  </article>
-                </li>
-              );
-            })}
-        </ul>
+        <h1 className="heading-1">News</h1>
+        <div className="news-container_scroll">
+          <ul>
+            {news &&
+              news.map((article) => {
+                return (
+                  <li className="news-article" key={article.NewsID}>
+                    <article>
+                      <h4 className="heading-4">{article.Title}...</h4>
+                      <p>{article.Content}</p>
+                    </article>
+                  </li>
+                );
+              })}
+          </ul>
+        </div>
       </div>
     </>
   );

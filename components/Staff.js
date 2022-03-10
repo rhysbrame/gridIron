@@ -5,7 +5,7 @@ const Staff = (props) => {
   return (
     <>
       <div className="staff-container">
-        <h1>Staff</h1>
+        <h1 className="heading-1">Staff</h1>
         <h3>
           Head Coach:&nbsp;
           {team.HeadCoach}
