@@ -50,9 +50,11 @@ const Schedule = (props) => {
             teamGames.map((game) => {
               return (
                 <li key={game.GameKey}>
-                  <h5 className="heading-5">{game.AwayTeam}</h5>
-                  <h5 className="heading-5">{game.DateTime}</h5>
-                  <h5 className="heading-5">{game.Channel}</h5>
+                  <h5 className="heading-5">Home:&nbsp;{game.HomeTeam}</h5>
+                  <h5 className="heading-5">Away:&nbsp;{game.AwayTeam}</h5>
+                  <h5 className="heading-5">Date Time:&nbsp;{game.DateTime}</h5>
+                  <h5 className="heading-5">Channel:&nbsp;{game.Channel}</h5>
+                  <br />
                 </li>
               );
             })}

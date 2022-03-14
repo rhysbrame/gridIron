@@ -46,13 +46,15 @@ const App = () => {
 
   return (
     <div className="background-container">
-      <div className="container">
+      <div className="main-container">
         <Header data={chosenTeam} />
         <TeamSelector teams={Teams} onChange={handleSelectTeam} />
-        <Schedule teamKey={chosenTeam.GlobalTeamID} />
-        <Stadium stadium={chosenTeam.StadiumDetails} />
-        <Staff team={chosenTeam} />
         <News teamID={chosenTeam.Key} />
+        <div className="sss-container">
+          <Stadium stadium={chosenTeam.StadiumDetails} />
+          <Staff team={chosenTeam} />
+          <Schedule teamKey={chosenTeam.GlobalTeamID} />
+        </div>
         <Roster teamID={chosenTeam.Key} />
         <Footer />
       </div>

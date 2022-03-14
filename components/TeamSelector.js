@@ -6,9 +6,13 @@ const TeamSelector = (props) => {
   return (
     <>
       <div className="selector-container">
-        <br></br>
-        <select name="teams" id="team-select" onChange={onChange}>
-          <option>Select a Team...</option>
+        <select
+          className="select-team"
+          name="teams"
+          id="select-team"
+          onChange={onChange}
+        >
+          <option>Change Team...</option>
           {teams.map((team) => {
             const { Key, Name, City } = team;
             return (
@@ -18,7 +22,6 @@ const TeamSelector = (props) => {
             );
           })}
         </select>
-        <br></br>
       </div>
     </>
   );

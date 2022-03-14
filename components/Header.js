@@ -5,18 +5,18 @@ const Header = (props) => {
   return (
     <>
       <header className="header">
-        <div className="header__wordmark-container">
-          <img
-            className="header__wordmark-img"
-            src={data.WikipediaWordMarkUrl}
-            alt="wordmark"
-          />
-        </div>
         <div className="header__logo-container">
           <img
             className="header__logo-img"
             src={data.WikipediaLogoUrl}
             alt="logo"
+          />
+        </div>
+        <div className="header__wordmark-container">
+          <img
+            className="header__wordmark-img"
+            src={data.WikipediaWordMarkUrl}
+            alt="wordmark"
           />
         </div>
       </header>

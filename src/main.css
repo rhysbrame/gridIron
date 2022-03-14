@@ -41,40 +41,68 @@ body {
   background-color: var(--team-tertiary-color);
 }
 
-.container {
+.main-container {
   width: 90%;
   margin: 0 auto;
   padding: 5rem;
+  border-left: 1rem solid var(--team-secondary-color);
+  border-right: 1rem solid var(--team-secondary-color);
   background-color: var(--team-primary-color);
   display: grid;
-  grid-template-columns: repeat(3, [col-start] 1fr [col-end]);
-  grid-template-rows: repeat(3, 25vh) 75vh min-content;
-  grid-gap: 3rem;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+@media only screen and (min-width: 112.5em) {
+  .main-container {
+    width: 85%;
+  }
 }
 @media only screen and (max-width: 56.25em) {
-  .container {
-    width: 100%;
+  .main-container {
+    width: 95%;
     padding: 3rem;
   }
 }
 @media only screen and (max-width: 37.5em) {
-  .container {
+  .main-container {
     width: 100%;
     padding: 3rem 0;
   }
 }
 
+.sss-container {
+  border: 0.5rem solid yellow;
+  display: grid;
+  width: 100%;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(3, 1fr);
+}
+@media only screen and (max-width: 75em) {
+  .sss-container {
+    border: 0.5rem solid blue;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .sss-container {
+    border: 0.5rem solid plum;
+    grid-template-columns: 1fr;
+  }
+}
+
 .heading-5, .heading-4, .heading-3, .heading-2, .heading-1 {
   font-family: Arial, Helvetica, sans-serif;
-  font-weight: 500;
+  font-weight: 400;
 }
 
 .heading-1 {
   font-size: 4rem;
+  font-weight: 800;
 }
 
 .heading-2 {
   font-size: 3.4rem;
+  font-weight: 500;
 }
 
 .heading-3 {
@@ -83,7 +111,6 @@ body {
 
 .heading-4 {
   font-size: 2rem;
-  font-weight: 600;
 }
 
 .heading-5 {
@@ -110,8 +137,6 @@ body {
   background-color: #ffffff;
   padding: 1.5rem;
   overflow-y: scroll;
-  grid-row: 2/3;
-  grid-column: col-start 1/col-end 3;
   border-radius: 1rem;
 }
 @media only screen and (max-width: 37.5em) {
@@ -126,9 +151,9 @@ body {
 }
 
 .schedule-container {
+  border: 0.5rem solid salmon;
   background-color: #ffffff;
   padding: 1.5rem;
-  grid-row: span 2;
   border-radius: 1rem;
 }
 @media only screen and (max-width: 37.5em) {
@@ -141,6 +166,8 @@ body {
 }
 
 .stadium-container {
+  border: 0.5rem solid darkcyan;
+  font-weight: 600;
   padding: 1.5rem;
   background-color: #ffffff;
   border-radius: 1rem;
@@ -152,6 +179,7 @@ body {
 }
 
 .staff-container {
+  border: 0.5rem solid rebeccapurple;
   padding: 1.5rem;
   background-color: #ffffff;
   border-radius: 1rem;
@@ -165,7 +193,6 @@ body {
 .roster-container {
   padding: 1.5rem;
   background-color: #ffffff;
-  grid-column: col-start 2/col-end 3;
   border-radius: 1rem;
 }
 @media only screen and (max-width: 37.5em) {
@@ -178,17 +205,22 @@ body {
 }
 
 .roster-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.roster-player {
+  padding: 1rem;
+  margin: 1rem;
+  border: 0.1rem solid black;
+  flex-grow: 1;
 }
 
 .header {
   background-color: #ffffff;
+  grid-column: 1/2;
   grid-row: 1/2;
-  grid-column: col-start 1/col-end 3;
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   border-radius: 1rem;
 }
 @media only screen and (max-width: 37.5em) {
@@ -197,46 +229,122 @@ body {
   }
 }
 .header__logo-container {
-  grid-row: 1/2;
-  grid-column: 1/2;
-  height: 10rem;
-  width: 10rem;
-  border-radius: 50%;
-  display: flex;
+  height: 12.5rem;
+  width: 12.5rem;
+}
+@media only screen and (max-width: 75em) {
+  .header__logo-container {
+    height: 10rem;
+    width: 10rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header__logo-container {
+    height: 7.5rem;
+    width: 7.5rem;
+  }
 }
 .header__logo-img {
-  align-items: end;
   max-height: 100%;
   max-width: 100%;
-  margin: auto;
-  padding: 1rem;
+  margin: 2rem 0 0 4rem;
+}
+@media only screen and (max-width: 75em) {
+  .header__logo-img {
+    margin: 2rem 0 0 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header__logo-img {
+    margin: 1rem 0 0 2rem;
+  }
 }
 .header__wordmark-container {
-  grid-row: 2/4;
-  grid-column: 3/11;
+  height: 20rem;
   display: flex;
-  align-items: center;
+  justify-content: center;
+}
+@media only screen and (max-width: 75em) {
+  .header__wordmark-container {
+    height: 15rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .header__wordmark-container {
+    height: 10rem;
+  }
 }
 .header__wordmark-img {
-  padding: 0.3rem;
-  width: 100%;
+  padding-bottom: 0.2rem;
+  width: 66%;
   max-height: 100%;
+}
+@media only screen and (max-width: 37.5em) {
+  .header__wordmark-img {
+    width: 80%;
+    padding-bottom: 0.5rem;
+    margin-top: 0.5rem;
+  }
 }
 
 .selector-container {
+  height: fit-content;
+  grid-column: 1/2;
   grid-row: 1/2;
-  grid-column: col-start 3/col-end 3;
+  justify-self: end;
+  margin: 1rem 4rem;
+}
+@media only screen and (max-width: 75em) {
+  .selector-container {
+    margin: 0.5rem 2rem;
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .selector-container {
+    margin: 0 0.3rem;
+  }
+}
+
+.select-team {
+  margin: 1rem;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  font-size: 1.7rem;
+  font-family: sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+  padding: 0.8rem 1rem 0.8rem 1rem;
+  border: 0.1rem solid #ffffff;
+  border-radius: 0.4rem;
+  background: linear-gradient(165deg, var(--team-primary-color) 25%, var(--team-secondary-color) 100%);
 }
 
 .footer {
-  background-color: #000000;
-  grid-column: col-start 1/col-end 3;
+  background-color: #ffffff;
+  color: #ffffff;
   border-radius: 1rem;
 }
 @media only screen and (max-width: 37.5em) {
   .footer {
     border-radius: 0;
   }
+}
+.footer__link {
+  border-radius: 0.3rem;
+  padding: 1rem;
+  width: fit-content;
+  display: block;
+}
+.footer__link:link, .footer__link:visited {
+  font-size: 2rem;
+  color: #000000;
+  text-decoration: none;
+  margin: 2rem auto;
+  transition: all 0.2s;
+}
+.footer__link:hover, .footer__link:active {
+  box-shadow: 0 0 1rem 0 #000000;
 }
 
 /*# sourceMappingURL=main.css.map */

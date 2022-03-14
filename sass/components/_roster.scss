@@ -1,7 +1,6 @@
 .roster-container {
   padding: $default-container-padding;
   background-color: $color-white;
-  grid-column: col-start 2 / col-end 3;
 
   border-radius: map.get($border-radius, 'curved');
   @include respond(phone) {
@@ -14,11 +13,17 @@
 }
 
 .roster-grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 
   // grid-template-columns: repeat(3, 1fr);
-  grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
 }
 
 .roster-player {
+  padding: 1rem;
+  margin: 1rem;
+  border: 0.1rem solid black;
+  flex-grow: 1;
 }

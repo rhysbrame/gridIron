@@ -4,15 +4,9 @@ const Footer = () => {
   return (
     <>
       <div className="footer">
-        <div className="">
-          <p className="footer__copyright">
-            Built by&nbsp;
-            <a href="https://github.com/rhysbrame" className="footer__link">
-              Rhys Brame
-            </a>
-            &nbsp;&copy; 2022
-          </p>
-        </div>
+        <a href="https://github.com/rhysbrame" className="footer__link">
+          Built by Rhys Brame &copy; 2022
+        </a>
       </div>
     </>
   );

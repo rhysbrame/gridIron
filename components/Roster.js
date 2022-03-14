@@ -23,11 +23,21 @@ const Roster = (props) => {
         <ul className="roster-grid">
           {roster &&
             roster.map((player) => {
+              console.log(player);
               return (
                 <li className="roster-player" key={player.PlayerID}>
+                  <h5 className="heading-5">Name:&nbsp;{player.Name}</h5>
+                  <h5 className="heading-5">Number:&nbsp;{player.Number}</h5>
+                  <h5 className="heading-5">College:&nbsp;{player.College}</h5>
                   <h5 className="heading-5">
-                    {player.FirstName}&nbsp;{player.LastName}
+                    Position:&nbsp;{player.Position}
                   </h5>
+                  <img
+                    className="player-img"
+                    src={player.PhotoUrl}
+                    alt="photo"
+                  />
+                  <br />
                 </li>
               );
             })}

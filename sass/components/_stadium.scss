@@ -1,6 +1,9 @@
 .stadium-container {
-  padding: $default-container-padding;
+  border: 0.5rem solid darkcyan;
 
+  font-weight: 600;
+
+  padding: $default-container-padding;
   background-color: $color-white;
 
   border-radius: map.get($border-radius, 'curved');
