@@ -1,8 +1,5 @@
 .selector-container {
-  // border: 0.5rem solid yellow;
-
   height: fit-content;
-
   grid-column: 1 / 2;
   grid-row: 1 / 2;
 
@@ -16,11 +13,8 @@
     margin: 0 0.3rem;
   }
 }
+
 .select-team {
-  // display: block;
-  // width: 100%;
-  // max-width: 100%;
-  // box-sizing: border-box;
   margin: 1rem;
 
   -moz-appearance: none;
@@ -35,10 +29,10 @@
   padding: 0.8rem 1rem 0.8rem 1rem;
   border: 0.1rem solid $color-white;
   border-radius: 0.4rem;
+  background-color: var(--team-primary-color);
 
-  background: linear-gradient(
-    165deg,
-    var(--team-primary-color) 25%,
-    var(--team-secondary-color) 100%
-  );
+  &:focus {
+    border-color: $color-grey-light;
+    outline: none;
+  }
 }

@@ -1,8 +1,7 @@
 .footer {
   background-color: $color-white;
-  color: $color-white;
-
   border-radius: map.get($border-radius, 'curved');
+
   @include respond(phone) {
     border-radius: map.get($border-radius, 'none');
   }
@@ -19,12 +18,12 @@
     font-size: 2rem;
     color: $color-black;
     text-decoration: none;
-    margin: 2rem auto;
+    margin: 1rem auto;
     transition: all 0.2s;
   }
 
   &__link:hover,
   &__link:active {
-    box-shadow: 0 0 1rem 0 $color-black;
+    border: 00.3rem solid $color-black;
   }
 }

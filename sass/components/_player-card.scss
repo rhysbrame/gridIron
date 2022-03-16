@@ -1,0 +1,48 @@
+.player-grid {
+  display: grid;
+  grid-gap: 1rem;
+
+  grid-template-columns: repeat(4, minmax(max-content, 1fr));
+
+  @include respond(tab-land) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @include respond(tab-port) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include respond(phone) {
+    grid-template-columns: minmax(300px, 1fr);
+  }
+}
+
+.player-card {
+  padding-top: 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0.5rem 0.5rem 2rem $color-grey-light;
+  color: $color-white;
+  background: linear-gradient(
+    160deg,
+    var(--team-primary-color) 33%,
+    var(--team-secondary-color) 66%
+  );
+  border-radius: map.get($border-radius, 'curved');
+  @include respond(phone) {
+    border-radius: map.get($border-radius, 'none');
+  }
+}
+
+.player-img {
+  background-color: $color-white-trans;
+  width: 8rem;
+  border-radius: map.get($border-radius, 'curved');
+  // position: absolute;
+}
+
+.view-player-btn {
+  width: 100%;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  padding: 1rem;
+}

@@ -44,10 +44,10 @@ body {
 .main-container {
   width: 90%;
   margin: 0 auto;
-  padding: 5rem;
+  padding: 5rem 5rem 0 5rem;
   border-left: 1rem solid var(--team-secondary-color);
-  border-right: 1rem solid var(--team-secondary-color);
-  background-color: var(--team-primary-color);
+  border-right: 1rem solid var(--team-primary-color);
+  background: linear-gradient(92deg, var(--team-primary-color) 20%, var(--team-secondary-color) 80%);
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 1rem;
@@ -60,18 +60,17 @@ body {
 @media only screen and (max-width: 56.25em) {
   .main-container {
     width: 95%;
-    padding: 3rem;
+    padding: 3rem 3rem 0 3rem;
   }
 }
 @media only screen and (max-width: 37.5em) {
   .main-container {
     width: 100%;
-    padding: 3rem 0;
+    padding: 3rem 0 0 0;
   }
 }
 
 .sss-container {
-  border: 0.5rem solid yellow;
   display: grid;
   width: 100%;
   grid-gap: 1rem;
@@ -79,13 +78,11 @@ body {
 }
 @media only screen and (max-width: 75em) {
   .sss-container {
-    border: 0.5rem solid blue;
     grid-template-columns: repeat(2, 1fr);
   }
 }
 @media only screen and (max-width: 37.5em) {
   .sss-container {
-    border: 0.5rem solid plum;
     grid-template-columns: 1fr;
   }
 }
@@ -134,10 +131,11 @@ body {
 }
 
 .news-container {
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
   background-color: #ffffff;
   padding: 1.5rem;
   overflow-y: scroll;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 @media only screen and (max-width: 37.5em) {
   .news-container {
@@ -151,10 +149,16 @@ body {
 }
 
 .schedule-container {
-  border: 0.5rem solid salmon;
-  background-color: #ffffff;
   padding: 1.5rem;
-  border-radius: 1rem;
+  background-color: #ffffff;
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
+  border-radius: 0.25rem;
+}
+@media only screen and (max-width: 75em) {
+  .schedule-container {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
 }
 @media only screen and (max-width: 37.5em) {
   .schedule-container {
@@ -166,11 +170,11 @@ body {
 }
 
 .stadium-container {
-  border: 0.5rem solid darkcyan;
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
   font-weight: 600;
   padding: 1.5rem;
   background-color: #ffffff;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 @media only screen and (max-width: 37.5em) {
   .stadium-container {
@@ -179,10 +183,10 @@ body {
 }
 
 .staff-container {
-  border: 0.5rem solid rebeccapurple;
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
   padding: 1.5rem;
   background-color: #ffffff;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 @media only screen and (max-width: 37.5em) {
   .staff-container {
@@ -192,36 +196,72 @@ body {
 
 .roster-container {
   padding: 1.5rem;
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
   background-color: #ffffff;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 @media only screen and (max-width: 37.5em) {
   .roster-container {
     border-radius: 0;
   }
 }
-.roster-container li {
-  list-style: none;
+
+.player-grid {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(4, minmax(max-content, 1fr));
+}
+@media only screen and (max-width: 75em) {
+  .player-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media only screen and (max-width: 56.25em) {
+  .player-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media only screen and (max-width: 37.5em) {
+  .player-grid {
+    grid-template-columns: minmax(300px, 1fr);
+  }
 }
 
-.roster-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+.player-card {
+  padding-top: 1rem;
+  text-align: center;
+  position: relative;
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
+  color: #ffffff;
+  background: linear-gradient(160deg, var(--team-primary-color) 33%, var(--team-secondary-color) 66%);
+  border-radius: 0.25rem;
+}
+@media only screen and (max-width: 37.5em) {
+  .player-card {
+    border-radius: 0;
+  }
 }
 
-.roster-player {
+.player-img {
+  background-color: #ffffff80;
+  width: 8rem;
+  border-radius: 0.25rem;
+}
+
+.view-player-btn {
+  width: 100%;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
   padding: 1rem;
-  margin: 1rem;
-  border: 0.1rem solid black;
-  flex-grow: 1;
 }
 
 .header {
+  box-shadow: 0.5rem 0.5rem 2rem #969696;
   background-color: #ffffff;
   grid-column: 1/2;
   grid-row: 1/2;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 @media only screen and (max-width: 37.5em) {
   .header {
@@ -317,13 +357,16 @@ body {
   padding: 0.8rem 1rem 0.8rem 1rem;
   border: 0.1rem solid #ffffff;
   border-radius: 0.4rem;
-  background: linear-gradient(165deg, var(--team-primary-color) 25%, var(--team-secondary-color) 100%);
+  background-color: var(--team-primary-color);
+}
+.select-team:focus {
+  border-color: #969696;
+  outline: none;
 }
 
 .footer {
   background-color: #ffffff;
-  color: #ffffff;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
 }
 @media only screen and (max-width: 37.5em) {
   .footer {
@@ -340,11 +383,11 @@ body {
   font-size: 2rem;
   color: #000000;
   text-decoration: none;
-  margin: 2rem auto;
+  margin: 1rem auto;
   transition: all 0.2s;
 }
 .footer__link:hover, .footer__link:active {
-  box-shadow: 0 0 1rem 0 #000000;
+  border: 0.3rem solid #000000;
 }
 
 /*# sourceMappingURL=main.css.map */

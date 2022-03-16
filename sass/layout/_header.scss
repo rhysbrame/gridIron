@@ -1,5 +1,5 @@
 .header {
-  // border: 0.4rem solid darkgoldenrod;
+  box-shadow: 0.5rem 0.5rem 2rem $color-grey-light;
 
   background-color: $color-white;
   grid-column: 1 / 2;
@@ -11,8 +11,6 @@
   }
 
   &__logo-container {
-    // border: 0.5rem solid salmon;
-
     height: 12.5rem;
     width: 12.5rem;
     @include respond(tab-land) {
@@ -26,8 +24,6 @@
   }
 
   &__logo-img {
-    // border: 0.5rem solid greenyellow;
-
     max-height: 100%;
     max-width: 100%;
     margin: 2rem 0 0 4rem;
@@ -40,8 +36,6 @@
   }
 
   &__wordmark-container {
-    // border: 0.5rem solid blue;
-
     height: 20rem;
     display: flex;
     justify-content: center;
@@ -55,8 +49,6 @@
   }
 
   &__wordmark-img {
-    // border: 0.5rem solid darkcyan;
-
     padding-bottom: 0.2rem;
     width: 66%;
     max-height: 100%;

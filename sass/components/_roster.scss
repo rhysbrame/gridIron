@@ -1,29 +1,9 @@
 .roster-container {
   padding: $default-container-padding;
+  box-shadow: 0.5rem 0.5rem 2rem $color-grey-light;
   background-color: $color-white;
-
   border-radius: map.get($border-radius, 'curved');
   @include respond(phone) {
     border-radius: map.get($border-radius, 'none');
   }
-
-  li {
-    list-style: none;
-  }
-}
-
-.roster-grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-
-  // grid-template-columns: repeat(3, 1fr);
-  // grid-template-columns: repeat(auto-fit, minmax(23rem, 1fr));
-}
-
-.roster-player {
-  padding: 1rem;
-  margin: 1rem;
-  border: 0.1rem solid black;
-  flex-grow: 1;
 }

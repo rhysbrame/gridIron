@@ -27,7 +27,7 @@ const Stadium = (props) => {
   }
   return (
     <div className="stadium-container">
-      <h1 className="heading-1">No Stadium</h1>
+      <h1 className="heading-1">Stadium</h1>
     </div>
   );
 };

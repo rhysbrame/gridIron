@@ -25,7 +25,7 @@ const Staff = (props) => {
   }
   return (
     <div className="staff-container">
-      <h1 className="heading-1">No Staff</h1>
+      <h1 className="heading-1">Staff</h1>
     </div>
   );
 };
