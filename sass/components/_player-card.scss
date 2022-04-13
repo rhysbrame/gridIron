@@ -2,17 +2,17 @@
   display: grid;
   grid-gap: 1rem;
 
-  grid-template-columns: repeat(4, minmax(max-content, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
 
-  @include respond(tab-land) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  @include respond(tab-port) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  @include respond(phone) {
-    grid-template-columns: minmax(300px, 1fr);
-  }
+  // @include respond(tab-land) {
+  //   grid-template-columns: repeat(3, 1fr);
+  // }
+  // @include respond(tab-port) {
+  //   grid-template-columns: repeat(2, 1fr);
+  // }
+  // @include respond(phone) {
+  //   grid-template-columns: minmax(300px, 1fr);
+  // }
 }
 
 .player-card {

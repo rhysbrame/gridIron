@@ -13,7 +13,32 @@
     border-radius: map.get($border-radius, 'none');
   }
 
-  li {
+  &__list {
     list-style: none;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  }
+
+  &__details {
+    border: solid 2px var(--team-primary-color);
+    padding: 1rem;
+    &--bye {
+      border: solid 2px red;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+  }
+
+  &__game {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    // color: green;
+  }
+  &__game-media {
+    font-size: 2.3rem;
+    // text-transform: uppercase;
+    // color: green;
   }
 }
