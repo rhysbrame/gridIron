@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { date } from '../src/utils';
 
 const Schedule = (props) => {
   const [teamGames, setTeamGames] = useState(null);
@@ -40,21 +41,39 @@ const Schedule = (props) => {
           setTeamGames(data);
         });
   }, [teamKey]);
-
   return (
     <>
       <div className="schedule-container">
-        <h1 className="heading-1">Schedule</h1>
-        <ul>
+        <h1 className="heading-1">{currentYear}&nbsp;Schedule</h1>
+        <ul className="schedule-container__list">
           {teamGames &&
             teamGames.map((game) => {
-              return (
-                <li key={game.GameKey}>
-                  <h5 className="heading-5">Home:&nbsp;{game.HomeTeam}</h5>
-                  <h5 className="heading-5">Away:&nbsp;{game.AwayTeam}</h5>
-                  <h5 className="heading-5">Date Time:&nbsp;{game.DateTime}</h5>
-                  <h5 className="heading-5">Channel:&nbsp;{game.Channel}</h5>
-                  <br />
+              let formattedDate = date(game.DateTime);
+
+              return game.GameKey ? (
+                <li className="schedule-container__details" key={game.GameKey}>
+                  <h3 className="heading-3">Week {game.Week}</h3>
+                  <p className="schedule-container__game">
+                    {game.AwayTeam}&nbsp;@&nbsp;{game.HomeTeam} (
+                    {game.StadiumDetails.Name})
+                  </p>
+                  <p className="schedule-container__game-media">
+                    {formattedDate.hours}:{formattedDate.minutes}&nbsp;
+                    {formattedDate.weekday}&nbsp;on&nbsp;{game.Channel}
+                  </p>
+                  <p className="schedule-container__game-media">
+                    {' '}
+                    {formattedDate.date} {formattedDate.month}{' '}
+                    {formattedDate.year}
+                  </p>
+                </li>
+              ) : (
+                <li
+                  className="schedule-container__details schedule-container__details--bye"
+                  key={game.Week}
+                >
+                  <h3 className="heading-3">Week {game.Week}</h3>
+                  <p>Bye Week</p>
                 </li>
               );
             })}

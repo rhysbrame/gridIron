@@ -2,9 +2,9 @@ import React from 'react';
 
 const PlayerCard = (props) => {
   const { player } = props;
-  console.log(player);
+
   return (
-    <div className="player-card" key={player.PlayerID}>
+    <div className="player-card">
       <img className="player-img" src={player.PhotoUrl} alt="player photo" />
       <p>{player.Number}</p>
       <h4 className="heading-4">{player.Name}</h4>

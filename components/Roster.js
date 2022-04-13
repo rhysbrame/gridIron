@@ -12,9 +12,15 @@ const Roster = (props) => {
     teamID &&
       fetch('Roster.json')
         .then((res) => {
+          if (!res.ok) {
+            throw new Error('There is no Roster here');
+          }
           return res.json();
         })
-        .then((data) => setRoster(data));
+        .then((data) => setRoster(data))
+        .catch((error) => {
+          console.error(error);
+        });
   }, [teamID]);
 
   return (
@@ -24,11 +30,7 @@ const Roster = (props) => {
         <div className="player-grid">
           {roster &&
             roster.map((player) => {
-              return (
-                <>
-                  <PlayerCard player={player} />
-                </>
-              );
+              return <PlayerCard player={player} key={player.PlayerID} />;
             })}
         </div>
       </div>

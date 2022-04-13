@@ -12,7 +12,6 @@ const TeamSelector = (props) => {
           id="select-team"
           onChange={onChange}
         >
-          <option>Change Team...</option>
           {teams.map((team) => {
             const { Key, Name, City } = team;
             return (

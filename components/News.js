@@ -11,9 +11,17 @@ const News = (props) => {
     teamID &&
       fetch('News.json')
         .then((res) => {
+          if (!res.ok) {
+            throw new Error('There is no news here');
+          }
           return res.json();
         })
-        .then((data) => setNews(data));
+        .then((data) => {
+          setNews(data);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
   }, [teamID]);
 
   return (

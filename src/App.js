@@ -8,11 +8,26 @@ import Roster from '../components/Roster';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-// Change this Teams object to a call ot the 3rd party API for up to date information.
+// Change this Teams object to a call on the 3rd party API for up to date information.
 import Teams from '../public/Teams.json';
+
+const NFL = {
+  Key: 'NFL',
+  Name: 'Select an NFL Team...',
+  PrimaryColor: '808080',
+  SecondaryColor: 'FFFFFF',
+  TertiaryColor: '000000',
+  WikipediaLogoUrl:
+    'https://upload.wikimedia.org/wikipedia/en/a/a2/National_Football_League_logo.svg',
+  WikipediaWordMarkUrl:
+    'https://upload.wikimedia.org/wikipedia/en/b/b4/100_NFL_seasons_logo.svg',
+};
+
+Teams.unshift(NFL);
 
 const App = () => {
   const [chosenTeam, setChosenTeam] = useState({
+    Key: null,
     Name: 'Select an NFL Team',
     PrimaryColor: '808080',
     SecondaryColor: 'FFFFFF',
