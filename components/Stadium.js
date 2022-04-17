@@ -1,4 +1,5 @@
 import React from 'react';
+import Map from '../components/Map';
 
 const Stadium = (props) => {
   const { stadium } = props;
@@ -11,16 +12,17 @@ const Stadium = (props) => {
           <h2 className="heading-2">
             {stadium ? stadium.Name : 'Canton, OHIO'}
           </h2>
-          <ul>
-            <li>{stadium.City}</li>
-            <li>{stadium.State}</li>
-            <li>{stadium.Country}</li>
-            <li>{stadium.GeoLat}</li>
-            <li>{stadium.GeoLong}</li>
-            <li>{stadium.Type}</li>
-            <li>{stadium.PlayingSurface}</li>
-            <li>{stadium.Capacity}</li>
+          <ul className="stadium-container__list">
+            <li>
+              {stadium.City}, {stadium.State}
+            </li>
+            <li>Capacity: {stadium.Capacity}</li>
+            <li>Arena Type: {stadium.Type}</li>
+            <li>Surface: {stadium.PlayingSurface}</li>
           </ul>
+          <div className="stadium-map">
+            <Map stadium={stadium} />
+          </div>
         </div>
       </>
     );

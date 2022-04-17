@@ -201,6 +201,35 @@ body {
     border-radius: 0;
   }
 }
+.stadium-container__list {
+  list-style: none;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.map-marker {
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  color: black;
+}
+.map-marker__icon {
+  font-size: 4rem;
+  position: relative;
+  top: -3.5rem;
+  left: -1.3rem;
+}
+.map-marker__icon-text {
+  position: relative;
+  top: 1rem;
+  left: -1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 0.5rem;
+  font-size: 1.8rem;
+  text-align: center;
+}
 
 .staff-container {
   box-shadow: 0.5rem 0.5rem 2rem #969696;

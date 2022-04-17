@@ -10,4 +10,37 @@
   @include respond(phone) {
     border-radius: map.get($border-radius, 'none');
   }
+
+  &__list {
+    list-style: none;
+
+    font-size: 2rem;
+    font-weight: 400;
+  }
+}
+
+.map-marker {
+  display: flex;
+  align-items: center;
+  width: 15rem;
+  color: black;
+
+  &__icon {
+    font-size: 4rem;
+    position: relative;
+    top: -3.5rem;
+    left: -1.3rem;
+  }
+
+  &__icon-text {
+    position: relative;
+    top: 1rem;
+    left: -1rem;
+    padding: 0.5rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 0.5rem;
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }
