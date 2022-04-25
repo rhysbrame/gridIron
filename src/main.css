@@ -242,6 +242,14 @@ body {
     border-radius: 0;
   }
 }
+.staff-container__head-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+}
+.staff-container__coach-title {
+  font-size: 2rem;
+  font-weight: 400;
+}
 
 .roster-container {
   padding: 1.5rem;

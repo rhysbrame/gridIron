@@ -1,12 +1,19 @@
 .staff-container {
   box-shadow: 0.5rem 0.5rem 2rem $color-grey-light;
-
   padding: $default-container-padding;
-
   background-color: $color-white;
 
   border-radius: map.get($border-radius, 'curved');
   @include respond(phone) {
     border-radius: map.get($border-radius, 'none');
+  }
+
+  &__head-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+  }
+  &__coach-title {
+    font-size: 2rem;
+    font-weight: 400;
   }
 }
