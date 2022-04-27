@@ -2,7 +2,6 @@
   box-shadow: 0.5rem 0.5rem 2rem $color-grey-light;
   background-color: $color-white;
   padding: $default-container-padding;
-  overflow-y: scroll;
 
   border-radius: map.get($border-radius, 'curved');
   @include respond(phone) {
@@ -10,10 +9,11 @@
   }
 }
 
-.news-container_scroll {
-}
+.article {
+  white-space: normal;
 
-.news-article {
-  list-style: none;
-  font-size: 16px;
+  &__title {
+  }
+  &__content {
+  }
 }

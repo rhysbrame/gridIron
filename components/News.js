@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Carousel, { CarouselItem } from './Carousel';
 
 const News = (props) => {
   const [news, setNews] = useState(null);
@@ -28,21 +29,21 @@ const News = (props) => {
     <>
       <div className="news-container">
         <h1 className="heading-1">News</h1>
-        <div className="news-container_scroll">
-          <ul>
+        {news && (
+          <Carousel>
             {news &&
               news.map((article) => {
                 return (
-                  <li className="news-article" key={article.NewsID}>
-                    <article>
-                      <h4 className="heading-4">{article.Title}...</h4>
-                      <p>{article.Content}</p>
+                  <CarouselItem key={article.NewsID}>
+                    <article className="article">
+                      <h2 className="article__title">{article.Title}...</h2>
+                      <p className="article__content">{article.Content}</p>
                     </article>
-                  </li>
+                  </CarouselItem>
                 );
               })}
-          </ul>
-        </div>
+          </Carousel>
+        )}
       </div>
     </>
   );

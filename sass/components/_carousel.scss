@@ -1,0 +1,97 @@
+.carousel {
+  overflow: hidden;
+
+  &-inner {
+    white-space: nowrap;
+    transition: transform 0.3s;
+  }
+  &-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.indicators {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__chevron {
+    margin: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 2rem;
+    height: 4rem;
+    width: 4rem;
+    background-color: $color-black;
+    color: $color-white;
+  }
+
+  &__number {
+    cursor: pointer;
+    margin: 1rem;
+    border: none;
+    border-radius: 10rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: $color-grey-light;
+    color: $color-white;
+  }
+}
+
+.indicators > button.active {
+  background-color: $color-black;
+  color: $color-white;
+}
+
+.arrow {
+  cursor: pointer;
+  position: relative;
+  display: block;
+  margin: 1rem;
+  width: 3rem;
+  height: 3rem;
+  border: solid 0.3rem #999;
+  border-radius: 100%;
+  z-index: 1;
+  transition: all 0.1s linear;
+  &:before,
+  &:after {
+    content: '';
+    position: absolute;
+    width: 35%;
+    height: 10%;
+    top: 41%;
+    left: 55%;
+    background: #999;
+    z-index: 2;
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: all 0.1s linear;
+  }
+  &:after {
+    z-index: 3;
+    top: 59%;
+    left: 55%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+  }
+  &:hover {
+    border: solid 0.35rem #777;
+    &:after,
+    &:before {
+      background: #777;
+    }
+  }
+  &:active {
+    border: solid 0.4rem $color-black;
+    &:after,
+    &:before {
+      background: $color-black;
+    }
+  }
+}
+
+.left {
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
