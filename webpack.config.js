@@ -26,9 +26,10 @@ module.exports = {
   mode: 'development',
   plugins: [
     new HTMLWebpackPlugin({
-      template: 'src/index.html',
+      template: path.resolve(__dirname, './src/template.html'),
+      filename: 'index.html',
     }),
-    new Dotenv(),
     new CleanWebpackPlugin(),
+    new Dotenv(),
   ],
 };
