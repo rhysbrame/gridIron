@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import PlayerCard from './PlayerCard';
+import Carousel, { CarouselItem } from './Carousel';
 
 const Roster = (props) => {
   const [roster, setRoster] = useState(null);
@@ -28,10 +29,18 @@ const Roster = (props) => {
       <div className="roster-container">
         <h1 className="heading-1">Roster</h1>
         <div className="player-grid">
-          {roster &&
-            roster.map((player) => {
-              return <PlayerCard player={player} key={player.PlayerID} />;
-            })}
+          {roster && (
+            <Carousel show={3}>
+              {roster &&
+                roster.map((player) => {
+                  return (
+                    <CarouselItem key={player.PlayerID}>
+                      <PlayerCard player={player} key={player.PlayerID} />
+                    </CarouselItem>
+                  );
+                })}
+            </Carousel>
+          )}
         </div>
       </div>
     </>

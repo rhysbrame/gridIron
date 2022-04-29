@@ -9,6 +9,20 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    font-size: 2rem;
+
+    &__show-1 {
+      // background-color: pink;
+      width: calc(100% / 1);
+    }
+    &__show-2 {
+      // background-color: palegoldenrod;
+      width: calc(100% / 2);
+    }
+    &__show-3 {
+      // background-color: peru;
+      width: calc(100% / 3);
+    }
   }
 }
 
@@ -37,6 +51,20 @@
     height: 1.5rem;
     background-color: $color-grey-light;
     color: $color-white;
+
+    // development
+
+    &__show-1 {
+      // background-color: pink;
+    }
+    &__show-2 {
+      // background-color: paleturquoise;
+      display: none;
+    }
+    &__show-3 {
+      // background-color: peru;
+      display: none;
+    }
   }
 }
 

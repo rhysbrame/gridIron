@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useSwipeable } from 'react-swipeable';
 
-export const CarouselItem = ({ children, width }) => {
+export const CarouselItem = ({ children, show }) => {
   return (
-    <div className="carousel-item" style={{ width: width }}>
+    <div className={`carousel-item carousel-item__show-${show}`}>
       {children}
     </div>
   );
 };
 
-const Carousel = ({ children }) => {
+const Carousel = ({ children, show }) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
 
@@ -19,22 +19,21 @@ const Carousel = ({ children }) => {
     } else if (newIndex >= React.Children.count(children)) {
       newIndex = 0;
     }
-
     setActiveIndex(newIndex);
   };
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!paused) {
-        updateIndex(activeIndex + 1);
-      }
-    }, 2000);
-    return () => {
-      if (interval) {
-        clearInterval(interval);
-      }
-    };
-  });
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (!paused) {
+  //       updateIndex(activeIndex + 1);
+  //     }
+  //   }, 2000);
+  //   return () => {
+  //     if (interval) {
+  //       clearInterval(interval);
+  //     }
+  //   };
+  // });
 
   const handlers = useSwipeable({
     onSwipedLeft: () => {
@@ -61,7 +60,7 @@ const Carousel = ({ children }) => {
         style={{ transform: `translateX(-${activeIndex * 100}%)` }}
       >
         {React.Children.map(children, (child, index) => {
-          return React.cloneElement(child, { width: '100%' });
+          return React.cloneElement(child, { show: show });
         })}
       </div>
       <div className="indicators">
@@ -76,8 +75,8 @@ const Carousel = ({ children }) => {
             <button
               className={`${
                 index === activeIndex
-                  ? 'indicators__number active'
-                  : 'indicators__number'
+                  ? `indicators__number indicators__number__show-${show} active`
+                  : `indicators__number indicators__number__show-${show}`
               }`}
               onClick={() => {
                 updateIndex(index);

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { date } from '../src/utils';
+import Carousel, { CarouselItem } from './Carousel';
 
 const Schedule = (props) => {
   const [teamGames, setTeamGames] = useState(null);
@@ -46,37 +47,53 @@ const Schedule = (props) => {
       <div className="schedule-container">
         <h1 className="heading-1">{currentYear}&nbsp;Schedule</h1>
         <ul className="schedule-container__list">
-          {teamGames &&
-            teamGames.map((game) => {
-              let formattedDate = date(game.DateTime);
+          {teamGames && (
+            <Carousel show={2}>
+              {teamGames &&
+                teamGames.map((game) => {
+                  let formattedDate = date(game.DateTime);
 
-              return game.GameKey ? (
-                <li className="schedule-container__details" key={game.GameKey}>
-                  <h3 className="heading-3">Week {game.Week}</h3>
-                  <p className="schedule-container__game">
-                    {game.AwayTeam}&nbsp;@&nbsp;{game.HomeTeam} (
-                    {game.StadiumDetails.Name})
-                  </p>
-                  <p className="schedule-container__game-media">
-                    {formattedDate.hours}:{formattedDate.minutes}&nbsp;
-                    {formattedDate.weekday}&nbsp;on&nbsp;{game.Channel}
-                  </p>
-                  <p className="schedule-container__game-media">
-                    {' '}
-                    {formattedDate.date} {formattedDate.month}{' '}
-                    {formattedDate.year}
-                  </p>
-                </li>
-              ) : (
-                <li
-                  className="schedule-container__details schedule-container__details--bye"
-                  key={game.Week}
-                >
-                  <h3 className="heading-3">Week {game.Week}</h3>
-                  <p>Bye Week</p>
-                </li>
-              );
-            })}
+                  return game.GameKey ? (
+                    <CarouselItem key={game.GameKey}>
+                      <li
+                        className="schedule-container__details"
+                        key={game.GameKey}
+                      >
+                        <h3 className="heading-3">Week {game.Week}</h3>
+                        <p className="schedule-container__game">
+                          {game.AwayTeam}&nbsp;@&nbsp;{game.HomeTeam}
+                        </p>
+                        <p className="schedule-container__game-stadia">
+                          ({game.StadiumDetails.Name})
+                        </p>
+                        <p className="schedule-container__game-media">
+                          {formattedDate.hours}:{formattedDate.minutes}&nbsp;
+                          {formattedDate.weekday}&nbsp;on&nbsp;
+                          <span className="schedule-container__game-media-channel">
+                            {game.Channel}
+                          </span>
+                        </p>
+                        <p className="schedule-container__game-media">
+                          {' '}
+                          {formattedDate.date} {formattedDate.month}{' '}
+                          {formattedDate.year}
+                        </p>
+                      </li>
+                    </CarouselItem>
+                  ) : (
+                    <CarouselItem key={game.Week}>
+                      <li
+                        className="schedule-container__details schedule-container__details--bye"
+                        key={game.Week}
+                      >
+                        <h3 className="heading-3">Week {game.Week}</h3>
+                        <p>Bye Week</p>
+                      </li>
+                    </CarouselItem>
+                  );
+                })}
+            </Carousel>
+          )}
         </ul>
       </div>
     </>

@@ -171,6 +171,8 @@ body {
 .schedule-container__details {
   border: solid 2px var(--team-primary-color);
   padding: 1rem;
+  width: -webkit-fill-available;
+  margin: 1rem;
 }
 .schedule-container__details--bye {
   border: solid 2px red;
@@ -182,8 +184,16 @@ body {
   text-transform: uppercase;
   font-weight: bold;
 }
+.schedule-container__game-stadia {
+  font-size: 2.3rem;
+  font-style: italic;
+}
 .schedule-container__game-media {
   font-size: 2.3rem;
+}
+.schedule-container__game-media-channel {
+  font-size: 2.3rem;
+  font-weight: bold;
 }
 
 .stadium-container {
@@ -272,8 +282,11 @@ body {
   position: relative;
   box-shadow: 0.5rem 0.5rem 2rem #969696;
   color: #ffffff;
-  background: linear-gradient(160deg, var(--team-primary-color) 33%, var(--team-secondary-color) 66%);
+  background: linear-gradient(0deg, var(--team-primary-color) 33%, var(--team-secondary-color) 66%);
   border-radius: 0.25rem;
+  width: -webkit-fill-available;
+  padding: 1rem;
+  margin: 1rem;
 }
 @media only screen and (max-width: 37.5em) {
   .player-card {
@@ -306,6 +319,16 @@ body {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  font-size: 2rem;
+}
+.carousel-item__show-1 {
+  width: 100%;
+}
+.carousel-item__show-2 {
+  width: 50%;
+}
+.carousel-item__show-3 {
+  width: 33.3333333333%;
 }
 
 .indicators {
@@ -332,6 +355,12 @@ body {
   height: 1.5rem;
   background-color: #969696;
   color: #ffffff;
+}
+.indicators__number__show-2 {
+  display: none;
+}
+.indicators__number__show-3 {
+  display: none;
 }
 
 .indicators > button.active {

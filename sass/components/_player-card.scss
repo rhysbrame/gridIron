@@ -22,7 +22,7 @@
   box-shadow: 0.5rem 0.5rem 2rem $color-grey-light;
   color: $color-white;
   background: linear-gradient(
-    160deg,
+    0deg,
     var(--team-primary-color) 33%,
     var(--team-secondary-color) 66%
   );
@@ -30,6 +30,10 @@
   @include respond(phone) {
     border-radius: map.get($border-radius, 'none');
   }
+
+  width: -webkit-fill-available;
+  padding: 1rem;
+  margin: 1rem;
 }
 
 .player-img {

@@ -30,7 +30,7 @@ const News = (props) => {
       <div className="news-container">
         <h1 className="heading-1">News</h1>
         {news && (
-          <Carousel>
+          <Carousel show={1}>
             {news &&
               news.map((article) => {
                 return (
