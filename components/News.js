@@ -2,19 +2,13 @@ import React, { useEffect, useState } from 'react';
 import Carousel, { CarouselItem } from './Carousel';
 
 const News = (props) => {
-  console.log('environment', process.env.NODE_ENV);
-
   const [news, setNews] = useState(null);
   const { teamID } = props;
-
-  console.log('teamID', teamID);
 
   const NEWS_URL =
     process.env.NODE_ENV === 'development'
       ? 'News.json'
       : `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
-
-  console.log('NEWS_URL', NEWS_URL);
 
   useEffect(() => {
     teamID &&

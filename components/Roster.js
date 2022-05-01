@@ -6,12 +6,14 @@ const Roster = (props) => {
   const [roster, setRoster] = useState(null);
   const { teamID } = props;
 
-  //replace fetch local with this url
-  const url = `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
+  const ROSTER_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'Roster.json'
+      : `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamID &&
-      fetch('Roster.json')
+      fetch(ROSTER_URL)
         .then((res) => {
           if (!res.ok) {
             throw new Error('There is no Roster here');
