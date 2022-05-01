@@ -5,12 +5,14 @@ const News = (props) => {
   const [news, setNews] = useState(null);
   const { teamID } = props;
 
-  //replace fetch local with this url
-  const NEWS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
+  const NEWS_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'News.json'
+      : `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamID &&
-      fetch('News.json')
+      fetch(NEWS_URL)
         .then((res) => {
           if (!res.ok) {
             throw new Error('There is no news here');
