@@ -30,8 +30,6 @@ module.exports = {
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
-    new Dotenv({
-      path: path.join(__dirname, '.env'),
-    }),
+    new Dotenv(),
   ],
 };

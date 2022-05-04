@@ -8,12 +8,11 @@ import Roster from '../components/Roster';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const API_Key = process.env.SPORTSDATA_API_KEY;
+const { SPORTSDATA_API_KEY } = process.env;
 
 const App = () => {
   console.log("I'm up and running...");
-  console.log('api check', process.env.SPORTSDATA_API_KEY);
-  console.log('key- outside', API_Key);
+  console.log('api key check', SPORTSDATA_API_KEY);
   const [teams, setTeams] = useState([]);
   const [chosenTeam, setChosenTeam] = useState({
     Key: 'NFL',
@@ -30,7 +29,7 @@ const App = () => {
   const TEAMS_URL =
     process.env.NODE_ENV.trim() === 'production'
       ? 'Teams.json'
-      : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${API_Key}`;
+      : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     fetch(TEAMS_URL)
