@@ -23,7 +23,6 @@ module.exports = {
       },
     ],
   },
-  // mode: 'development',
   plugins: [
     new HTMLWebpackPlugin({
       template: path.resolve(__dirname, './src/template.html'),

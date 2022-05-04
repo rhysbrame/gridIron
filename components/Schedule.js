@@ -15,10 +15,16 @@ const Schedule = (props) => {
   useEffect(() => {
     fetch(CURRENT_SEASON_URL)
       .then((res) => {
+        if (!res.ok) {
+          throw new Error('There is no Roster here');
+        }
         return res.json();
       })
       .then((data) => {
         setCurrentYear(data);
+      })
+      .catch((error) => {
+        console.error(error);
       });
   });
 
