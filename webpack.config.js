@@ -30,6 +30,8 @@ module.exports = {
       filename: 'index.html',
     }),
     new CleanWebpackPlugin(),
-    new Dotenv(),
+    new Dotenv({
+      ignoreStub: true,
+    }),
   ],
 };
