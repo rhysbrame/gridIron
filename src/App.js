@@ -10,6 +10,7 @@ import Footer from '../components/Footer';
 
 const App = () => {
   console.log("I'm up and running...");
+  console.log('api check', process.env.SPORTSDATA_API_KEY);
   const [teams, setTeams] = useState([]);
   const [chosenTeam, setChosenTeam] = useState({
     Key: 'NFL',
