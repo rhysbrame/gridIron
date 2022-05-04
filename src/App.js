@@ -23,7 +23,7 @@ const App = () => {
   });
 
   const TEAMS_URL =
-    process.env.NODE_ENV === 'development'
+    process.env.NODE_ENV.trim() === 'production'
       ? 'Teams.json'
       : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`;
 
@@ -41,7 +41,7 @@ const App = () => {
       .catch((error) => {
         console.error(error);
       });
-  });
+  }, [TEAMS_URL]);
 
   // const NFL = {
   //   Key: 'NFL',
