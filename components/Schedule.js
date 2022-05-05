@@ -25,7 +25,7 @@ const Schedule = (props) => {
         return res.json();
       })
       .then((data) => {
-        setCurrentYear(data);
+        setCurrentYear(data - 1);
       })
       .catch((error) => {
         console.error(error);
