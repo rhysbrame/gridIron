@@ -5,10 +5,14 @@ const News = (props) => {
   const [news, setNews] = useState(null);
   const { teamID } = props;
 
-  const NEWS_URL =
-    process.env.NODE_ENV === 'development'
-      ? 'News.json'
-      : `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
+  //Webpack/vercel not finding process.env...
+
+  // const NEWS_URL =
+  //   process.env.NODE_ENV === 'development'
+  //     ? 'News.json'
+  //     : `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
+
+  const NEWS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=a79947c2b7ac4db7849431550720651c`;
 
   useEffect(() => {
     teamID &&

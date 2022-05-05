@@ -9,8 +9,6 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 
 const App = () => {
-  console.log("I'm up and running...");
-  console.log('api key check', process.env.SPORTSDATA_API_KEY);
   const [teams, setTeams] = useState([]);
   const [chosenTeam, setChosenTeam] = useState({
     Key: 'NFL',
@@ -24,15 +22,15 @@ const App = () => {
       'https://upload.wikimedia.org/wikipedia/en/b/b4/100_NFL_seasons_logo.svg',
   });
 
+  //Webpack/vercel not finding process.env...
+
   // const TEAMS_URL =
   //   process.env.NODE_ENV.trim() === 'production'
   //     ? 'Teams.json'
   //     : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
 
-  const TEAMS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`;
-
-  // const TEAMS_URL =
-  //   'https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=a79947c2b7ac4db7849431550720651c';
+  const TEAMS_URL =
+    'https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=a79947c2b7ac4db7849431550720651c';
 
   useEffect(() => {
     fetch(TEAMS_URL)
