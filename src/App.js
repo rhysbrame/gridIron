@@ -8,8 +8,6 @@ import Roster from '../components/Roster';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
-const { SPORTSDATA_API_KEY } = process.env;
-
 const App = () => {
   console.log("I'm up and running...");
   console.log('api key check', SPORTSDATA_API_KEY);
@@ -31,7 +29,7 @@ const App = () => {
   //     ? 'Teams.json'
   //     : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
 
-  const TEAMS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
+  const TEAMS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`;
 
   // const TEAMS_URL =
   //   'https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=a79947c2b7ac4db7849431550720651c';
