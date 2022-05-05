@@ -26,10 +26,13 @@ const App = () => {
       'https://upload.wikimedia.org/wikipedia/en/b/b4/100_NFL_seasons_logo.svg',
   });
 
+  // const TEAMS_URL =
+  //   process.env.NODE_ENV.trim() === 'production'
+  //     ? 'Teams.json'
+  //     : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
+
   const TEAMS_URL =
-    process.env.NODE_ENV.trim() === 'production'
-      ? 'Teams.json'
-      : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
+    'https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=a79947c2b7ac4db7849431550720651c';
 
   useEffect(() => {
     fetch(TEAMS_URL)
