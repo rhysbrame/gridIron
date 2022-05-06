@@ -10,7 +10,7 @@
         ]
     },
     "scripts": {
-        "dev": "webpack-dev-server --open",
+        "dev": "webpack serve",
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack",
         "sass:watch": "sass sass/main.scss src/main.css -w",
