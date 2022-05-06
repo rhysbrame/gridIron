@@ -11,7 +11,6 @@
     },
     "scripts": {
         "dev": "webpack-dev-server --config webpack.dev.js",
-        "test": "echo \"Error: no test specified\" && exit 1",
         "build": "webpack --config webpack.prod.js",
         "sass:watch": "sass sass/main.scss src/main.css -w",
         "start": "npm-run-all --parallel dev sass:watch"

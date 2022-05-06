@@ -11,15 +11,15 @@ module.exports = merge(common, {
     path: path.resolve(__dirname, 'dist'),
   },
   devtool: 'source-map',
-  devServer: {
-    static: {
-      directory: path.resolve(__dirname, 'dist'),
-    },
-    port: 3000,
-    open: true,
-    hot: true,
-    compress: true,
-    historyApiFallback: true,
-  },
+  // devServer: {
+  //   static: {
+  //     directory: path.resolve(__dirname, 'dist'),
+  //   },
+  //   port: 3000,
+  //   open: true,
+  //   hot: true,
+  //   compress: true,
+  //   historyApiFallback: true,
+  // },
   plugins: [new BundleAnalyzerPlugin()],
 });

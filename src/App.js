@@ -22,14 +22,10 @@ const App = () => {
       'https://upload.wikimedia.org/wikipedia/en/b/b4/100_NFL_seasons_logo.svg',
   });
 
-  console.log(process.env.NODE_ENV);
-
-  // const TEAMS_URL =
-  //   process.env.NODE_ENV.trim() === 'production'
-  //     ? 'Teams.json'
-  //     : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
-
-  const TEAMS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`;
+  const TEAMS_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'Teams.json'
+      : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     fetch(TEAMS_URL)

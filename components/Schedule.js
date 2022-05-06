@@ -7,14 +7,10 @@ const Schedule = (props) => {
   const [currentYear, setCurrentYear] = useState(null);
   const { teamKey } = props;
 
-  //Webpack/vercel not finding process.env...
-
-  // const CURRENT_SEASON_URL =
-  //   process.env.NODE_ENV === 'development'
-  //     ? 'CurrentSeason.json'
-  //     : `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=${process.env.SPORTSDATA_API_KEY}`;
-
-  const CURRENT_SEASON_URL = `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=${process.env.SPORTSDATA_API_KEY}`;
+  const CURRENT_SEASON_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'CurrentSeason.json'
+      : `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     fetch(CURRENT_SEASON_URL)
@@ -32,14 +28,10 @@ const Schedule = (props) => {
       });
   });
 
-  //Webpack/vercel not finding process.env...
-
-  // const SCHEDULE_URL =
-  //   process.env.NODE_ENV === 'development'
-  //     ? 'Fixtures.json'
-  //     : `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=${process.env.SPORTSDATA_API_KEY}`;
-
-  const SCHEDULE_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=${process.env.SPORTSDATA_API_KEY}`;
+  const SCHEDULE_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'Fixtures.json'
+      : `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamKey &&
