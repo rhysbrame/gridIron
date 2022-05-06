@@ -46,6 +46,11 @@ module.exports = {
     ],
   },
   plugins: [
+    new webpack.DefinePlugin({
+      'process.env': {
+        SPORTSDATA_API_KEY: JSON.stringify(process.env.SPORTSDATA_API_KEY),
+      },
+    }),
     new HtmlWebpackPlugin({
       title: 'Grid Iron',
       template: path.resolve(__dirname, 'src/template.html'),
