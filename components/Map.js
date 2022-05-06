@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import GoogleMapReact from 'google-map-react';
 import Marker from './Marker';
 
-//Webpack not working to expose the process.env
 const API_KEY = process.env.GOOGLE_MAP_API_KEY;
 
 class Map extends Component {
