@@ -22,7 +22,7 @@ const App = () => {
       'https://upload.wikimedia.org/wikipedia/en/b/b4/100_NFL_seasons_logo.svg',
   });
 
-  //Webpack/vercel not finding process.env...
+  console.log(process.env.NODE_ENV);
 
   // const TEAMS_URL =
   //   process.env.NODE_ENV.trim() === 'production'

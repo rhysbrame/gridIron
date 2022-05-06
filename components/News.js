@@ -5,14 +5,10 @@ const News = (props) => {
   const [news, setNews] = useState(null);
   const { teamID } = props;
 
-  // const NEWS_URL =
-  //   process.env.NODE_ENV === 'development'
-  //     ? 'News.json'
-  //     : `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
-
-  console.log(process.env.NODE_ENV);
-
-  const NEWS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
+  const NEWS_URL =
+    process.env.NODE_ENV === 'development'
+      ? 'News.json'
+      : `https://api.sportsdata.io/v3/nfl/scores/json/NewsByTeam/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamID &&
@@ -34,7 +30,7 @@ const News = (props) => {
   return (
     <>
       <div className="news-container">
-        <h1 className="heading-1">{`News ${process.env.NODE_ENV}`}</h1>
+        <h1 className="heading-1">News</h1>
         {news && (
           <Carousel show={1}>
             {news &&
