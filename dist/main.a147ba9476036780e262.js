@@ -1064,7 +1064,7 @@ var News = function News(props) {
     className: "news-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement("h1", {
     className: "heading-1"
-  }, "News ".concat("a79947c2b7ac4db7849431550720651c")), news && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Carousel__WEBPACK_IMPORTED_MODULE_1__["default"], {
+  }, "News ".concat(undefined)), news && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Carousel__WEBPACK_IMPORTED_MODULE_1__["default"], {
     show: 1
   }, news && news.map(function (article) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0__.createElement(_Carousel__WEBPACK_IMPORTED_MODULE_1__.CarouselItem, {
@@ -34310,4 +34310,4 @@ react_dom__WEBPACK_IMPORTED_MODULE_1__.render( /*#__PURE__*/react__WEBPACK_IMPOR
 
 /******/ })()
 ;
-//# sourceMappingURL=main.8e34ee9b6babe833c5d0.js.map
+//# sourceMappingURL=main.a147ba9476036780e262.js.map
