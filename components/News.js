@@ -34,7 +34,7 @@ const News = (props) => {
   return (
     <>
       <div className="news-container">
-        <h1 className="heading-1">News</h1>
+        <h1 className="heading-1">{`News ${process.env.SPORTSDATA_API_KEY}`}</h1>
         {news && (
           <Carousel show={1}>
             {news &&
