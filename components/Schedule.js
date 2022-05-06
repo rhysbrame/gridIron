@@ -14,7 +14,7 @@ const Schedule = (props) => {
   //     ? 'CurrentSeason.json'
   //     : `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=${process.env.SPORTSDATA_API_KEY}`;
 
-  const CURRENT_SEASON_URL = `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=a79947c2b7ac4db7849431550720651c`;
+  const CURRENT_SEASON_URL = `https://api.sportsdata.io/v3/nfl/scores/json/CurrentSeason?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     fetch(CURRENT_SEASON_URL)
@@ -39,7 +39,7 @@ const Schedule = (props) => {
   //     ? 'Fixtures.json'
   //     : `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=${process.env.SPORTSDATA_API_KEY}`;
 
-  const SCHEDULE_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=a79947c2b7ac4db7849431550720651c`;
+  const SCHEDULE_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Schedules/${currentYear}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamKey &&

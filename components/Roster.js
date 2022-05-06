@@ -13,7 +13,7 @@ const Roster = (props) => {
   //     ? 'Roster.json'
   //     : `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
-  const ROSTER_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=a79947c2b7ac4db7849431550720651c`;
+  const ROSTER_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Players/${teamID}?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     teamID &&

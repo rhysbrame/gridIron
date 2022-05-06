@@ -29,8 +29,7 @@ const App = () => {
   //     ? 'Teams.json'
   //     : `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${SPORTSDATA_API_KEY}`;
 
-  const TEAMS_URL =
-    'https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=a79947c2b7ac4db7849431550720651c';
+  const TEAMS_URL = `https://api.sportsdata.io/v3/nfl/scores/json/Teams?key=${process.env.SPORTSDATA_API_KEY}`;
 
   useEffect(() => {
     fetch(TEAMS_URL)

@@ -10,9 +10,9 @@
         ]
     },
     "scripts": {
-        "dev": "webpack serve",
+        "dev": "webpack-dev-server --config webpack.dev.js",
         "test": "echo \"Error: no test specified\" && exit 1",
-        "build": "webpack",
+        "build": "webpack --config webpack.prod.js",
         "sass:watch": "sass sass/main.scss src/main.css -w",
         "start": "npm-run-all --parallel dev sass:watch"
     },
@@ -43,6 +43,7 @@
         "webpack": "^5.72.0",
         "webpack-bundle-analyzer": "^4.5.0",
         "webpack-cli": "^4.9.1",
-        "webpack-dev-server": "^4.5.0"
+        "webpack-dev-server": "^4.5.0",
+        "webpack-merge": "^5.8.0"
     }
 }
